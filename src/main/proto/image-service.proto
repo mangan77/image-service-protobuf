@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "nu.justlikethat.imageservice.protobuf";
+option java_outer_classname = "ImageServiceProto";
+
+package imageservice;
+
+message StoreRequest {
+    string sourcePath = 1;
+}
+
+message StoreResponse {
+    string storagePath = 1;
+}
+
+service ImageService {
+    rpc store (StoreRequest) returns (StoreResponse);
+}
